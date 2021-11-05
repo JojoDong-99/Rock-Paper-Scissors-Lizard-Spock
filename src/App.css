@@ -2,6 +2,31 @@
   text-align: center;
 }
 
+.fa{
+  color: rgb(72, 159, 245);
+  cursor: pointer;
+  margin: 10px;
+}
+
+.selected {
+  color: black;
+  margin: 10px;
+}
+
+#player .fa:hover{
+  color: #282c34;
+}
+
+
+
+#computer .fa,
+#computer .choice {
+  color: rgb(247, 49, 99);
+  cursor: pointer;
+  margin: 10px;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
