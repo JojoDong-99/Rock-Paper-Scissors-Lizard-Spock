@@ -10,7 +10,7 @@ const choices = {
     Spock: { name: 'Spock', defeats: ['Scissors', 'Rock'] },
 }
 
-export default function GameContainer(params) {
+export default function GameContainer() {
     const [playerChoiceState, setPlayerChoiceState] = useState()
     const [computerChoiceState, setComputerChoiceState] = useState()
     const [result, setResult] = useState()
@@ -20,16 +20,27 @@ export default function GameContainer(params) {
     let [computerScore, setComputerScore] = useState(0)
 
     const handleSubmit = () => {
-        setPlayerName(name)
+        if (name) {
+            if (name.indexOf(' ') >= 0) {
+                let newName = name.replaceAll(' ', '')
+                console.log('new name length is : ', newName.length)
+                if (newName.length === 0) {
+                    return
+                } else {
+                    setPlayerName(name)
+                }
+            } else {
+                setPlayerName(name)
+            }
+        }
     }
-    
+
     const getComputerRandomChoice = () => {
         const randomChoiceNum = Math.floor(Math.random() * 5) + 1
         switch (randomChoiceNum) {
             case 1:
                 setComputerChoiceState('Rock')
                 return 'Rock'
-            // break;
             case 2:
                 setComputerChoiceState('Paper')
                 return 'Paper'
@@ -89,13 +100,13 @@ export default function GameContainer(params) {
 
     return (
         <div className="game-container">
-            
-                <label>
-                    Name:
-                    <input type="text" name="name" onChange={e => name = (e.target.value)}/>
-                </label>
-                <button onClick={handleSubmit}>Submit</button>
-            
+
+            <label>
+                Name:
+                <input type="text" name="name" onChange={e => name = (e.target.value)} />
+            </label>
+            <button onClick={handleSubmit}>Submit</button>
+
             <div className="player-container" id="player">
                 <h2>{playerName} -
                     <span> </span><span className="choice" id="player-choice">{playerChoiceState}</span>
