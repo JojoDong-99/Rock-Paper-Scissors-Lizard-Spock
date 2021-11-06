@@ -2,7 +2,8 @@
   text-align: center;
 }
 
-.fa{
+#player .fa,
+#player .choice{
   color: rgb(72, 159, 245);
   cursor: pointer;
   margin: 10px;
@@ -14,10 +15,8 @@
 }
 
 #player .fa:hover{
-  color: #282c34;
+  color: #a6acb3;
 }
-
-
 
 #computer .fa,
 #computer .choice {
@@ -26,6 +25,11 @@
   margin: 10px;
 }
 
+.button {
+  background-color: white;
+  border: white;
+  border-radius: 50%;
+}
 
 .App-logo {
   height: 40vmin;
