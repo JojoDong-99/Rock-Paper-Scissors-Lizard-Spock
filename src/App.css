@@ -2,7 +2,13 @@
   text-align: center;
 }
 
-#player .fa,
+.header *{
+  background-color: rgb(191, 212, 243);
+  margin-top: 0px;
+  padding: 20px;
+}
+
+#player .fa, 
 #player .choice{
   color: rgb(72, 159, 245);
   cursor: pointer;

@@ -90,10 +90,18 @@ export default function GameContainer() {
             const choice = choices[playerChoice]
             if (choice.defeats.indexOf(computerChoice) > -1) {
                 setPlayerScore(playerScore + 1)
-                setResult('You won!')
+                if (playerName != 'Player') {
+                    setResult(`Congratulations ${playerName}, you won!`)
+                } else {
+                    setResult('You won!')
+                }
             } else {
-                setResult('You Lost!')
                 setComputerScore(computerScore + 1)
+                if (playerName != 'Player') {
+                    setResult(`Sorry ${playerName}, you lost!`)
+                } else {
+                    setResult('You lost!')
+                }
             }
         }
     }
