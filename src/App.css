@@ -1,11 +1,34 @@
 .App {
   text-align: center;
+  background-image: url(./background.jpeg);
+  background-size: 50% 50%;
+  background-size:cover;
+  background-position:40% 50%;
+  padding-bottom: 20%;
 }
 
 .header *{
-  background-color: rgb(191, 212, 243);
-  margin-top: 0px;
-  padding: 20px;
+  background-image: url(./the-big-bang-theory-background.jpeg);
+  background-size:cover;
+  background-position:50% 50%;
+  padding: 30px;
+  margin-top: 0;
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container{
+  margin-top: 30px;
+  width: 60%;
+  height: 400px;
+  background: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 5px grey;
+  
 }
 
 #player .fa, 
@@ -71,3 +94,4 @@
     transform: rotate(360deg);
   }
 }
+

@@ -107,8 +107,8 @@ export default function GameContainer() {
     }
 
     return (
+        <div className='body'>
         <div className="game-container">
-
             <label>
                 Name:
                 <input type="text" name="name" onChange={e => name = (e.target.value)} />
@@ -122,23 +122,19 @@ export default function GameContainer() {
                 </h2>
                 <FontAwesomeIcon icon={['far', 'hand-rock']} className={playerChoiceState === 'Rock' ? 'selected' : 'fa'} id="playerRock" size="3x" onClick={() => {
                     process('Rock')
-                }}
-                />
+                }} />
                 <FontAwesomeIcon icon={['far', 'hand-paper']} className={playerChoiceState === 'Paper' ? 'selected' : 'fa'} id="playerPaper" size="3x" onClick={() => {
                     process('Paper')
                 }} />
                 <FontAwesomeIcon icon={['far', 'hand-scissors']} className={playerChoiceState === 'Scissors' ? 'selected' : 'fa'} id="playerScissors" size="3x" onClick={() => {
                     process('Scissors')
-                }}
-                />
+                }} />
                 <FontAwesomeIcon icon={['far', 'hand-lizard']} className={playerChoiceState === 'Lizard' ? 'selected' : 'fa'} id="playerLizard" size="3x" onClick={() => {
                     process('Lizard')
-                }}
-                />
+                }} />
                 <FontAwesomeIcon icon={['far', 'hand-spock']} className={playerChoiceState === 'Spock' ? 'selected' : 'fa'} id="playerSpock" size="3x" onClick={() => {
                     process('Spock')
-                }}
-                />
+                }} />
             </div>
             <div className="player-container" id="computer">
                 <h2>Computer -
@@ -152,6 +148,7 @@ export default function GameContainer() {
                 <FontAwesomeIcon icon={['far', 'hand-spock']} className={computerChoiceState === 'Spock' ? 'selected' : 'fa'} id="computerSpock" size="3x" />
             </div>
             <h1>{result}</h1>
+        </div>
         </div>
     )
 }
